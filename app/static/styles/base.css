@@ -1,0 +1,67 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'VT323', sans-serif;
+}
+
+.myalert {
+    width: 35%;
+    margin: 0 auto;
+    font-family: 'Lato', sans-serif;
+    text-align: center;
+}
+
+.username {
+    margin: 0;
+    margin-right: 20px;
+    position: absolute;
+    right: 0;
+    color: rgb(255, 205, 5);
+}
+
+.maindiv{
+    width: 100%;
+    min-height: 100vh;
+    padding: 20px 0;
+    background: linear-gradient(to bottom, rgb(252, 241, 198), rgb(251, 231, 152));
+    margin: 0;
+}
+
+.mynavbar {
+    background: linear-gradient(to bottom right, rgb(91, 176, 255), RGB(42, 117, 187));
+    padding: 2px;
+}
+
+.mylogo {
+    background: transparent;
+    padding: 0;
+    height: 40px;
+    margin: 5px 0 5px 60px;
+}
+
+.mynavitems {
+    color: black!important;
+    padding: 0;
+    margin: 0 8px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.myactive {
+    background-color: rgb(255, 203, 5);
+    color: rgb(60, 90, 166)!important;
+    font-weight: bold;
+    border-radius: 6px;
+}
+
+.mynavitems:hover, .mynavitems:active {
+    background-color: rgb(255, 203, 5);
+    color: rgb(42, 117, 187)!important;
+    border-radius: 6px;
+}
+
+.pokefont {
+    font-family: 'Pokemon Solid', sans-serif;
+}
+

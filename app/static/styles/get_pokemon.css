@@ -1,0 +1,141 @@
+
+.tophalf {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.mysearchform {
+    margin: 5% 0;
+}
+
+.bottomhalf {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+    z-index: 0;
+}
+
+.poke-form {
+    background-color: rgb(255, 203, 5);
+    padding: 10px 20px;
+    width: 70%;
+    min-width: 400px;
+    border: 5px solid rgb(60, 90, 166);
+    border-radius: 10px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.poke-card {
+    background-color: rgb(209, 252, 252);
+    border: 4px solid rgb(114, 159, 255);
+    margin: 2% auto;
+    padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.poke-card h5 {
+    text-align: center;
+}
+
+.poke-card li{
+    background-color:rgb(209, 254, 254);
+}
+
+.mytitle {
+    padding: 0!important;
+    margin: 0!important;
+    font-size: 1.5rem;
+}
+
+.poke-img {
+    width: 100px;
+    margin: -20px auto;
+}
+
+.pokefont {
+    font-size: 2rem;
+}
+
+.notfound {
+    text-align: center;
+}
+
+.pokemontext {
+    height: 140px;
+    margin: -25px 0;
+}
+
+.myformcontrol {
+    font-size: 1.2rem;
+}
+
+.btn {
+    font-size: 1.1rem;
+    background-color: rgb(40, 59, 106);
+    color: white;
+}
+
+.btn:hover, .btn:active {
+    background-color: rgb(47, 136, 237);
+}
+
+.mylistgroup {
+    width: 100%;
+}
+
+.mylist {
+    border: none;
+    font-size: 1.1rem;
+    padding: 2px 5px!important;
+}
+
+.signinsign {
+    position: fixed;
+    bottom: 0;
+    z-index: 2;
+    width: 100%;
+    height: 80px;
+    text-align: center;
+    background-color: rgba(128, 128, 128, 0.641);
+    border: 1px solid rgba(0, 0, 0, 0.213);
+}
+
+.signinsign h5 {
+    color: black;
+    padding-top: 25px;
+    font-size: 1.5rem;
+}
+
+.signinsign a {
+    color: rgb(0, 78, 141);
+    background-color: rgb(255, 203, 5);
+    border-radius: 5px;
+    padding: 8px 18px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.signinsign a:hover, .signinsign a:active {
+    text-decoration: none;
+    color: rgb(1, 105, 189);
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+.catchsix {
+    text-align: center;
+}
+
+@media (width <= 900px) {
+    .tophalf {
+        flex-direction: column;
+    }
+    .mysearchform {
+        margin: 20px auto;
+    }
+    .poke-card {
+        margin: 20px auto;
+    }
+  }

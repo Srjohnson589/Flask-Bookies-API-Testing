@@ -1,0 +1,51 @@
+{%extends "base.html"%}
+
+{%block title%}
+    Sign Up
+{%endblock%}
+
+{%block styles%}
+    <link rel="stylesheet" href="../static/styles/signin.css">
+{%endblock%}
+
+{%block content%}
+<section class="vh-80 gradient-custom">
+    <div class="container py-3">
+      <div class="row d-flex justify-content-center align-items-center">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+          <div class="card bg-dark text-white" style="border-radius: 1rem;">
+            <div class="mycard card-body p-5 text-center">
+  
+              <div class="mycardcontent mb-md-5 mt-md-4 pb-5">
+              <form method="POST">
+                {{form.hidden_tag()}}
+                <img class="mycardtitle" src="https://fontmeme.com/permalink/240211/59480f69375ab65e914b139e1f3e498c.png" alt="pokemon-font" border="0">
+                <div class="form-outline form-white mb-4">
+                  {{ form.username(class="form-control form-control-lg", id="typeUsernameX")}}
+                  <label class="form-label" for="typeUsernameX">Username</label>
+                </div>
+
+                <div class="form-outline form-white mb-4">
+                  {{ form.email(class="form-control form-control-lg", id="typeEmailX")}}
+                  <label class="form-label" for="typeEmailX">Email</label>
+                </div>
+  
+                <div class="form-outline form-white mb-4">
+                  {{ form.password(class="form-control form-control-lg", id="typePasswordX")}}                  
+                  <label class="form-label" for="typePasswordX">Password</label>
+                </div>
+ 
+                {{ form.submit_btn(class="btn btn-outline-light btn-lg px-5", id="submitX")}}
+              </form>
+              </div>
+              <div>
+                <p class="mb-0">Already have an account? <a href="/login" class="text-white-50 fw-bold">Log in</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+{%endblock%}
