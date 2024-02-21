@@ -1,7 +1,7 @@
 {%extends "base.html"%}
 
 {%block title%}
-    Bookies
+    Welcome to Bookies
 {%endblock%}
 
 {%block styles%}
@@ -12,8 +12,8 @@
 
 {%block content%}
   <div class="myhomediv"">
-    <img class="battleimg" src="../static/img/trainersbattling.png" alt="trainers battling">
-    <img class="welcome" src="https://fontmeme.com/permalink/240211/f73b2674185af29e3bc747e87bd23d31.png" alt="pokemon-font" border="0">
+    <!-- Bookies logo -->
+    <img class="battleimg" src="../static/img/Bookieslogo.png" alt="Bookies logo">
   </div>
 
   {%if current_user.is_anonymous%}
@@ -21,10 +21,6 @@
     <a class="homebtn" href="{{ url_for('auth.login')}}">Login</a>
     <a class="homebtn" href="{{ url_for('auth.signup')}}">Sign Up</a>
   </div>
-  {%elif current_user.is_authenticated%}
-  <div class="homeflex pokefont">
-    <a class="homebtn" href="{{ url_for('pokesearch.get_pokemon')}}">Catch</a>
-    <a class="homebtn" href="{{url_for('pokesearch.battlehome')}}">Battle</a>
-  </div>
+
   {%endif%}
 {%endblock%}

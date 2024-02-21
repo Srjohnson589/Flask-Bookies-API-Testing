@@ -1,0 +1,19 @@
+Base features:
+x--login/signup
+x--find books
+--add books to want to read
+--add books to read already
+--add books to currently reading
+--update/delete bookshelves
+--remove/replace current book
+--see other users bookshelves
+--rate/comment on books
+--link to buy the book
+
+Advanced Features to add:
+--link to find book at your library?
+--"Friend" button so only see your friends books
+
+"Icing on the cake" features:
+--Google/Facebook/LinkedIn Login
+--AI Chatbot for book recommendations

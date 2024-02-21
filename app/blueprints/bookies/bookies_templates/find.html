@@ -5,6 +5,7 @@
 {%endblock%}
 
 {%block styles%}
+<link rel="stylesheet" href="../static/styles/find.css">
 {%endblock%}
 
 {%block content%}
@@ -13,14 +14,19 @@
             {{ form.hidden_tag() }}
             <div class="mb-3">
             {{ form.search_str(class="myformcontrol form-control", id="exampleInputEmail1")}}
-            <div id="emailHelp" class="form-text">(Name or number up to 1025)</div>
             </div>
             {{ form.submit_btn(class="btn mybtn")}}
         </form>
     </div>
 
     {%if top_five_books%}
-        <p>top_five_books</p>
+        {%for book in top_five_books%}
+        <p>{{book.title}}</p>
+        <p>by {%for author in book.authors%}{{author}} {%endfor%}</p>
+        <img src="{{book.thumbnail}}" alt="">
+
+        <hr>
+        {%endfor%}
     {%endif%}
     
 {%endblock%}

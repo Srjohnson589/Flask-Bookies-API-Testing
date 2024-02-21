@@ -2,13 +2,17 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'VT323', sans-serif;
+    font-family: "Playfair Display", serif;
+}
+
+.shrikhand {
+    font-family: "Shrikhand", serif;
 }
 
 .myalert {
     width: 35%;
     margin: 0 auto;
-    font-family: 'Lato', sans-serif;
+    font-family: "Quicksand", sans-serif;
     text-align: center;
 }
 
@@ -24,8 +28,9 @@
     width: 100%;
     min-height: 100vh;
     padding: 20px 0;
-    background: linear-gradient(to bottom, rgb(252, 241, 198), rgb(251, 231, 152));
+    background: linear-gradient(to bottom, rgb(198, 233, 252), rgb(251, 231, 152));
     margin: 0;
+    text-align: center;
 }
 
 .mynavbar {
@@ -61,7 +66,4 @@
     border-radius: 6px;
 }
 
-.pokefont {
-    font-family: 'Pokemon Solid', sans-serif;
-}
 

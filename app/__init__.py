@@ -1,7 +1,7 @@
 from flask import Flask
 from config import Config
 from flask_login import LoginManager
-from app.models import db, User
+from app.models import db, User, Book, Author
 from flask_migrate import Migrate
 
 app = Flask(__name__)
@@ -20,11 +20,11 @@ login_manager.login_message_category = 'warning'
 
 #import blueprint into app
 from app.blueprints.auth import auth
-from app.blueprints.pokesearch import pokesearch
+from app.blueprints.bookies import bookies
 
 #register blueprint
 app.register_blueprint(auth)
-app.register_blueprint(pokesearch)
+app.register_blueprint(bookies)
 
 @login_manager.user_loader
 def load_user(user_id):
