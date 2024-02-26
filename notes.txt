@@ -15,5 +15,5 @@ Advanced Features to add:
 --"Friend" button so only see your friends books
 
 "Icing on the cake" features:
---Google/Facebook/LinkedIn Login
+--Google/Facebook/LinkedIn Login - NOT GONNA WORK, need authorization
 --AI Chatbot for book recommendations
