@@ -11,12 +11,12 @@ from app.models import User
 def login():
     form = LoginInput()
     if request.method == 'POST' and form.validate_on_submit():
-        name = form.name.data
+        username = form.username.data
         password = form.password.data
 
-        queried_user = User.query.filter(User.name == name).first()
+        queried_user = User.query.filter(User.name == username).first()
         if queried_user and check_password_hash(queried_user.password, password):
-            flash(f'Success! Welcome {name}, you have logged in.', 'success')
+            flash(f'Success! Welcome {username}, you have logged in.', 'success')
             login_user(queried_user)
             return redirect(url_for('pokesearch.home'))
         else:
@@ -37,10 +37,10 @@ def logout():
 def signup():
     form = SignUpInput()
     if request.method == 'POST' and form.validate_on_submit():
-        name = form.name.data
+        username = form.username.data
         password = form.password.data
         
-        queried_user = User.query.filter(User.name == name).first()
+        queried_user = User.query.filter(User.username == username).first()
         if queried_user:
             flash('A user with that name already exists. Try adding an initial or two!', 'danger')
             return render_template('signup.html', form=form)

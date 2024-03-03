@@ -1,9 +1,12 @@
 from . import bookies
 from flask import render_template, request, redirect, url_for, flash
-from .forms import SearchInput
+from .forms import SearchInput, ChatInput
 from flask_login import current_user, login_required, LoginManager
-from app.models import db, User, Book, Author 
+from app.models import db, User, Book 
 import requests
+
+from openai import OpenAI
+client = OpenAI()
 
 
 # Home route, greeting page
@@ -40,12 +43,13 @@ def search(searchstr):
 
 @bookies.route('/find', methods=['GET','POST'])
 def find():
-    form = SearchInput()
-    if request.method == 'POST' and form.validate_on_submit():
-        user_input = form.search_str.data
+    find_form = SearchInput()
+    chat_form = ChatInput()
+    if request.method == 'POST' and find_form.validate_on_submit():
+        user_input = find_form.search_str.data
         top_five_books = search(user_input)
-        if form.submit_btn.data:
-            return render_template('find.html', top_five_books=top_five_books, form=form)
+        if find_form.submit_btn.data:
+            return render_template('find.html', top_five_books=top_five_books, find_form=find_form)
         # if form.catch_btn.data:
         #     if not Pokemon.query.get(pokedata['name']):
         #         newpoke = Pokemon(pokedata['name'], pokedata['hp'], pokedata['attack'], pokedata['defense'], pokedata['sprite_img'])
@@ -61,7 +65,7 @@ def find():
         #         flash(f'{caughtpoke.name} caught!', 'success')
         #         return redirect(url_for('pokesearch.get_pokemon'))
     else:
-        return render_template('find.html', form=form)
+        return render_template('find.html', find_form=find_form, chat_form=chat_form)
 
 
 # @pokesearch.route('/release/<poke_name>')
@@ -126,3 +130,23 @@ def find():
 #             return render_template('finishedvs.html', opponent=opp)
 
     
+@bookies.route('/chat', methods=['POST'])
+def chat():
+    find_form = SearchInput()
+    chat_form = ChatInput()
+    if request.method == 'POST' and chat_form.validate_on_submit():
+        user_message = chat_form.chat_input.data
+        completion = client.chat.completions.create(
+            model="gpt-3.5-turbo",
+            messages=[
+                {"role": "system", "content": "You are a helpful librarian, giving concise but descriptive responses"},
+                {"role": "user", "content": user_message},
+            ],
+            temperature=1,
+            max_tokens=100,
+            top_p=1,
+            frequency_penalty=0,
+            presence_penalty=0
+            )
+        chat_response = completion.choices[0].message.content
+    return render_template('find.html', find_form=find_form, chat_form=chat_form, chat_response=chat_response)

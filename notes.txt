@@ -1,19 +1,22 @@
 Base features:
 x--login/signup
 x--find books
---add books to want to read
+X-add books to want to read
 --add books to read already
 --add books to currently reading
---update/delete bookshelves
+x-update/delete from want to read
 --remove/replace current book
 --see other users bookshelves
---rate/comment on books
---link to buy the book
+x-rate/comment on books
+--link to buy on amazon
+
+--link to see book with ratings
+--use postman to test my api
 
 Advanced Features to add:
 --link to find book at your library?
 --"Friend" button so only see your friends books
 
 "Icing on the cake" features:
---Google/Facebook/LinkedIn Login - NOT GONNA WORK, need authorization
+--Google/Facebook/LinkedIn Login -
 --AI Chatbot for book recommendations

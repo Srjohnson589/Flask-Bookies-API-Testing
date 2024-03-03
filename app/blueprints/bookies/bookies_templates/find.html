@@ -10,12 +10,12 @@
 
 {%block content%}
     <div class="mysearchform">
-        <form class="poke-form" method="POST">
-            {{ form.hidden_tag() }}
+        <form class="poke-form" method="POST" action="/find">
+            {{ find_form.hidden_tag() }}
             <div class="mb-3">
-            {{ form.search_str(class="myformcontrol form-control", id="exampleInputEmail1")}}
+            {{ find_form.search_str(class="myformcontrol form-control", id="exampleInputEmail1")}}
             </div>
-            {{ form.submit_btn(class="btn mybtn")}}
+            {{ find_form.submit_btn(class="btn mybtn")}}
         </form>
     </div>
 
@@ -28,5 +28,16 @@
         <hr>
         {%endfor%}
     {%endif%}
+
+    <div class="openaichat">
+        {% if chat_response %}
+        <p>{{chat_response}}</p>
+        {%endif%}
+        <form method="POST" action="/chat">
+         {{ chat_form.hidden_tag() }}
+          <p>I'm your librarian assistant!</p>
+         {{ chat_form.chat_input }}
+        </form>
+    </div>
     
 {%endblock%}

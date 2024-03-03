@@ -1,7 +1,7 @@
 from flask import Flask
 from config import Config
 from flask_login import LoginManager
-from app.models import db, User, Book, Author
+from app.models import db, User, Book
 from flask_migrate import Migrate
 
 app = Flask(__name__)

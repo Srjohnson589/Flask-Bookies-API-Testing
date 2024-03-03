@@ -7,24 +7,24 @@ db = SQLAlchemy()
 user_current = db.Table(
     'user_current',
     db.Column('user_id', db.Integer, db.ForeignKey('user.user_id')),
-    db.Column('book_id', db.String, db.ForeignKey('book.book_id'))
+    db.Column('book_id', db.Integer, db.ForeignKey('book.book_id'))
 )
 
 user_read = db.Table(
     'user_read',
     db.Column('user_id', db.Integer, db.ForeignKey('user.user_id')),
-    db.Column('book_id', db.String, db.ForeignKey('book.book_id'))
+    db.Column('book_id', db.Integer, db.ForeignKey('book.book_id'))
 )
 
 user_to_read = db.Table(
     'user_to_read',
     db.Column('user_id', db.Integer, db.ForeignKey('user.user_id')),
-    db.Column('book_id', db.String, db.ForeignKey('book.book_id'))
+    db.Column('book_id', db.Integer, db.ForeignKey('book.book_id'))
 )
 
 class User(db.Model, UserMixin):
     user_id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String, unique=True, nullable=False)
+    username = db.Column(db.String, unique=True, nullable=False)
     password = db.Column(db.String, nullable=False)
     current_books = db.relationship('Book',
                              secondary=user_current,
@@ -39,8 +39,8 @@ class User(db.Model, UserMixin):
                              backref="wants_to_read_by",
                              lazy="dynamic")
     
-    def __init__(self, name, password):
-        self.name = name
+    def __init__(self, username, password):
+        self.username = username
         self.password = generate_password_hash(password)
 
     def save(self):
